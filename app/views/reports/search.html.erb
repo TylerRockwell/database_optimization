@@ -1,0 +1,29 @@
+<h1> Search All Expenses</h1>
+<%= form_tag reports_search_path, method: :get do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<% if params[:search] %>
+  <h1>Search Results</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Assembly Name</th>
+        <th>Gene DNA</th>
+        <th>Hit Match Gene Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @assemblies.each do |a| %>
+        <tr>
+          <td><%= a.name %></td>
+          <td><%= a.sequences.genes.dna %></td>
+          <td><%= a.sequences.genes.hits.match_gene_dna.first(100) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>

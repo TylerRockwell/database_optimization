@@ -17,9 +17,19 @@ class ReportsController < ApplicationController
         end
       end
     end
+    # @everything = Sequence.all.includes(genes: :hits)
+    # @sequences = @everything.select{|sequence| sequence[:assebly_id] == @assembly.id}
     @hits.sort! {|a, b| b.percent_similarity <=> a.percent_similarity}
 
     @memory_used = memory_in_mb
+  end
+
+  def search
+    if params[:search]
+      q = "%#{params[:search]}%"
+      @assemblies = Assembly.joins(sequences: {genes: :hits}).
+          where("name LIKE ? OR genes.dna LIKE ? OR hits.match_gene_name LIKE ?", q, q, q)
+    end
   end
 
   private def memory_in_mb
