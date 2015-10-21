@@ -18,3 +18,15 @@ Time to load page after indices
 
 Time improvement %
 19,566% faster
+
+Size of database: 569.2 MB
+
+Size of development.log: 745.7 MB
+
+Method to reduce db size: SQLDatabase.Shrink() or Vacuum in sqlite
+
+I think this database is likely much smaller than the real world databases I'll work with
+
+Memory usage increases between page loads
+
+I have not been able to reduce memory usage
