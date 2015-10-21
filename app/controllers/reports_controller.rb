@@ -8,6 +8,9 @@ class ReportsController < ApplicationController
     @genes = []
     @hits = []
     @assembly = Assembly.find_by_name(params[:name])
+    # @assemblies = Assembly.joins(sequences: {genes: :hits}).
+    #     where("id = ?", params[:name])
+
     @assembly.sequences.each do |s|
       @sequences << s
       s.genes.each do |g|
@@ -19,7 +22,7 @@ class ReportsController < ApplicationController
     end
     # @everything = Sequence.all.includes(genes: :hits)
     # @sequences = @everything.select{|sequence| sequence[:assebly_id] == @assembly.id}
-    @hits.sort! {|a, b| b.percent_similarity <=> a.percent_similarity}
+    # @hits.sort! {|a, b| b.percent_similarity <=> a.percent_similarity}
 
     @memory_used = memory_in_mb
   end
