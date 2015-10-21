@@ -3,7 +3,7 @@ Seed Build Time:
 3,765 seconds (62.75 minutes)
 
 
-Initial Root Load:
+Initial Page Load:
 
 2,348 seconds (39.13 minutes)
 

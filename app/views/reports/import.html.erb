@@ -1,0 +1,6 @@
+<h1> Upload New Information</h1>
+
+<%= form_tag({action: :upload}, multipart: true) do %>
+  Select your CSV file:
+  <p><%= file_field_tag 'csv' %></p>
+<% end %>

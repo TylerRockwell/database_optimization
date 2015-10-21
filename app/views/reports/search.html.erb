@@ -19,8 +19,6 @@
       <% @assemblies.each do |a| %>
         <tr>
           <td><%= a.name %></td>
-          <td><%= a.sequences.genes.dna %></td>
-          <td><%= a.sequences.genes.hits.match_gene_dna.first(100) %></td>
         </tr>
       <% end %>
     </tbody>
