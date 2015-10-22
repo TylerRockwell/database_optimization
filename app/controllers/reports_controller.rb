@@ -34,7 +34,7 @@ class ReportsController < ApplicationController
   end
 
   def upload
-
+    render json: Report.import_file(params[:file])
   end
 
   def search
