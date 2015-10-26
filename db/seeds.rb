@@ -9,17 +9,24 @@
 now = Time.now
 today = Date.today
 
+# Development numbers
+# assembly_count = 10
+# sequence_count = 10000
+# gene_count = 50000
+# hit_count = 500000
+
+# Production numbers
 assembly_count = 10
-sequence_count = 10000
-gene_count = 50000
-hit_count = 500000
+sequence_count = 100
+gene_count = 150
+hit_count = 500
 
 puts_interval = 100
 
 dna_characters = ["A", "C", "T", "G"]
 
 dna_string = ""
-1500.times do
+150.times do
   dna_string << dna_characters.sample
 end
 
