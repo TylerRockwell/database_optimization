@@ -1,5 +1,5 @@
 class ReportsController < ApplicationController
-  helper_method :memory_in_mb
+  # helper_method :memory_in_mb
 
   def all_data
     ReportMailer.report_data(params[:name]).deliver_later
@@ -24,7 +24,7 @@ class ReportsController < ApplicationController
     ReportMailer.report_data.deliver_now
   end
 
-  private def memory_in_mb
-    `ps -o rss -p #{$$}`.strip.split.last.to_i / 1024
-  end
+  # private def memory_in_mb
+  #   `ps -o rss -p #{$$}`.strip.split.last.to_i / 1024
+  # end
 end
