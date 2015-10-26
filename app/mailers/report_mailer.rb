@@ -15,6 +15,6 @@ class ReportMailer < ApplicationMailer
 
     @hits = Hit.where(subject: Gene.where(sequence: Sequence.where(assembly: @assembly)))
 
-    mail to: "data_report@mailinator.com", subject: "Data Report"
+    mail to: "tyler.rockwell87@gmail.com", subject: "Data Report"
   end
 end
