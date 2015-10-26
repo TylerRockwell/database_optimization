@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get   'reports/all_data'
   get   'reports/search'
   get   'reports/import'
+  get   'reports/send_mail'
   post  'reports/upload'
 
   # The priority is based upon order of creation: first created -> highest priority.
