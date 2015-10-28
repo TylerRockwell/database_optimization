@@ -5,16 +5,7 @@ class ReportMailer < ApplicationMailer
   #
   #   en.report_mailer.report_data.subject
   #
-  def report_data(assembly_name)
-    @start_time = Time.now
-
-    @sequences = []
-    @genes = []
-    @hits = []
-    @assembly = Assembly.find_by_name(assembly_name)
-
-    @hits = Hit.where(subject: Gene.where(sequence: Sequence.where(assembly: @assembly)))
-
-    mail to: "tyler.rockwell87@gmail.com", subject: "Data Report"
+  def report_data(email)
+    mail to: email, subject: "Data Report"
   end
 end

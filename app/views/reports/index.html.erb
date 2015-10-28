@@ -1,0 +1,15 @@
+<% if @data %>
+  <%= @data %>
+<% else %>
+
+  <%= form_tag(action: :index) do %>
+    Enter your email:
+    <p><%= text_field_tag :email %></p>
+
+    Enter an assembly name:
+    <p><%= text_field_tag :name %></p>
+
+    <%= submit_tag %>
+  <% end %>
+
+<% end %>
